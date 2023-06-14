@@ -4,6 +4,15 @@ This project is initialized with [Ant Design Pro](https://pro.ant.design). Follo
 
 ## Environment Prepare
 
+```bash
+node -v
+ v16.20.0
+npm -v
+  8.19.4
+pnpm -v
+  7.30.0
+```
+
 Install `node_modules`:
 
 ```bash
@@ -14,6 +23,12 @@ or
 
 ```bash
 yarn
+```
+
+or (recommend)
+
+```bash
+pnpm i
 ```
 
 ## Provided Scripts
