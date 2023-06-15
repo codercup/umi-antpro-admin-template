@@ -8,6 +8,7 @@ import type { MenuInfo } from 'rc-menu/lib/interface';
 import React, { useCallback } from 'react';
 import { flushSync } from 'react-dom';
 import HeaderDropdown from '../HeaderDropdown';
+import { LOGIN_ROUTER } from '@/constants';
 
 export type GlobalHeaderRightProps = {
   menu?: boolean;
@@ -31,9 +32,9 @@ export const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu, childre
     /** 此方法会跳转到 redirect 参数所在的位置 */
     const redirect = urlParams.get('redirect');
     // Note: There may be security issues, please note
-    if (window.location.pathname !== '/user/login' && !redirect) {
+    if (window.location.pathname !== LOGIN_ROUTER && !redirect) {
       history.replace({
-        pathname: '/user/login',
+        pathname: LOGIN_ROUTER,
         search: stringify({
           redirect: pathname + search,
         }),
