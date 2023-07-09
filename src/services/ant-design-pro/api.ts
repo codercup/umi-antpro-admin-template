@@ -83,3 +83,46 @@ export async function removeRule(options?: { [key: string]: any }) {
     ...(options || {}),
   });
 }
+/** 获取圈子列表 GET /api/circle */
+export async function circle(
+  params: {
+    // query
+    /** 当前的页码 */
+    current?: number;
+    /** 页面的容量 */
+    pageSize?: number;
+  },
+  options?: { [key: string]: any },
+) {
+  return request<API.CircleList>('/api/circle', {
+    method: 'GET',
+    params: {
+      ...params,
+    },
+    ...(options || {}),
+  });
+}
+
+/** 新建圈子 PUT /api/rule */
+export async function updateCircle(options?: { [key: string]: any }) {
+  return request<API.CircleListItem>('/api/circle', {
+    method: 'PUT',
+    ...(options || {}),
+  });
+}
+
+/** 新建圈子 POST /api/circle */
+export async function addCircle(options?: { [key: string]: any }) {
+  return request<API.CircleListItem>('/api/circle', {
+    method: 'POST',
+    ...(options || {}),
+  });
+}
+
+/** 删除圈子 DELETE /api/circle */
+export async function removeCircle(options?: { [key: string]: any }) {
+  return request<Record<string, any>>('/api/circle', {
+    method: 'DELETE',
+    ...(options || {}),
+  });
+}

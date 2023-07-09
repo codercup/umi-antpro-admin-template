@@ -98,4 +98,17 @@ declare namespace API {
     description?: string;
     type?: NoticeIconItemType;
   };
+
+  type CircleList = {
+    data?: CircleListItem[];
+    /** 列表的内容总数 */
+    total?: number;
+    success?: boolean;
+  };
+  type CircleListItem = {
+    id: string;
+    name: string;
+    avatar: string;
+    desc: string;
+  };
 }
